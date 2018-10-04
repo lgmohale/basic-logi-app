@@ -1,0 +1,21 @@
+{
+  "name": "loginapp",
+  "version": "1.0.0",
+  "description": "basic nodejs application that allow a user to sign in and register",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.16.3",
+    "mongoose": "^5.3.1",
+    "bcrypt": "^3.0.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodejs",
+    "express"
+  ],
+  "author": "Lucas Mohale",
+  "license": "ISC"
+}
