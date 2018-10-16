@@ -15,8 +15,8 @@ app.get('/', function(req,res){
     res.sendFile("index.html");
 })
 
-app.post('/user', function(req,res){
-    res.sendFile("register.html");
+app.get('/user', function(req,res){
+    res.sendFile("login.html");
 })
 app.use('/user', db);
 var serv= app.listen(process.env.PORT || 4000);

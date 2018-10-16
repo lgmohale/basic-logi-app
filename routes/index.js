@@ -9,10 +9,11 @@ router.post('/add', function(req,res){
     db.create(newUser)
     .then(NewUsers=>{
         res.redirect('/login.html');
-        //alert("successfully registered");
         console.log("new user created");
-    });
+    })
+    .catch(err=>{
+        res.send(err);
+    })
 });
-
 
 module.exports = router;
