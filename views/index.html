@@ -19,20 +19,21 @@
         <section class="signup">
             <div class="container">
                 <div class="signup-content">
-                    <form action="/user/add" method="POST" id="signup-form" class="signup-form">
+                    <form method="POST" id="signup-form" class="signup-form" onclick="return false;" >
+                        <p id="status"></p>
                         <h2 class="form-title">Sign Up</h2>
                         <div class="form-group">
-                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name"/>
+                            <input type="text" class="form-input" name="name" id="name" placeholder="Your Name" required/>
                         </div>
                         <div class="form-group">
-                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email"/>
+                            <input type="email" class="form-input" name="email" id="email" placeholder="Your Email" required/>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-input" name="password" id="password" placeholder="Password"/>
+                            <input type="password" class="form-input" name="password" id="password" placeholder="Password" required/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         <div class="form-group">
-                            <input type="password" class="form-input" name="passwordConf" id="passwordConf" placeholder="Re-enter password"/>
+                            <input type="password" class="form-input" name="passwordConf" id="passwordConf" placeholder="Re-enter password" required/>
                             <span toggle="#password" class="zmdi zmdi-eye field-icon toggle-password"></span>
                         </div>
                         <div class="form-group">
@@ -40,7 +41,7 @@
                             <label for="agree-term" class="label-agree-term"><span><span></span></span>I agree all statements in  <a href="#" class="term-service">Terms of service</a></label>
                         </div>
                         <div class="form-group">
-                            <button type="submit" onclick="addUser()" name="submit" id="submit" class="form-submit" value="Sign up">Sign Up</button>
+                            <input onclick="addUser();" name="submit" id="submit" class="form-submit" class="form-submit" value="Sign Up">
                         </div>
                     </form>
                     <p class="loginhere">
@@ -51,6 +52,6 @@
         </section>
 
     </div>
-    <script src="bodyperse.js"></script>
+    <script src="main.js"></script>
 </body>
 </html>

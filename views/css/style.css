@@ -356,4 +356,7 @@ input[type=checkbox]:not(old):checked + label > span:before {
   .signup-content {
     padding: 50px 25px; } }
 
-/*# sourceMappingURL=style.css.map */
+#status{
+  text-align: center;
+  color: red;
+}
