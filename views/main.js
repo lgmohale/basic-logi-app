@@ -18,7 +18,7 @@ function addUser(){
                 }
             };
 
-            fetch('http://localhost:4001/user/add', option)
+            fetch('http://localhost:4008/user/add', option)
             .then(res=> res.json());
             }
             else{
@@ -29,4 +29,44 @@ function addUser(){
     else{
         document.getElementById('status').innerHTML = "All fields are required"
     }
+};
+
+function logInUser(){
+    if(getValue("email") && getValue("password") !== ""){
+        var myPost = {};
+        myPost.email = getValue("email");
+        myPost.password = getValue("password");
+
+        var option = {
+            method: 'POST',
+            body: JSON.stringify(myPost),
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        };
+
+        fetch('http://localhost:4008/user/login', option)
+        .then(res=> res.json())
+        .then(res=> console.log(res.response));
+    }
+    else{
+        document.getElementById('status').innerHTML = "All fields are required"
+    }
+};
+
+function userloggedIn(){
+    fetch('http://localhost:4008/user/isUserLoggin')
+    .then(res=> res.json())
+    .then(res=>{
+        if(res.resp !== false){
+            document.getElementById('logIn').style.display = 'none';
+            var script = document.createElement('script');
+            script.src = 'game/main/game.js';
+            document.getElementsByTagName('head')[0].appendChild(script);
+            window.location = 'login.html'
+        }
+        else{
+            document.getElementById('logIn').style.display = 'block';
+        }
+    });
 };

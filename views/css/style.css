@@ -1,4 +1,4 @@
-/* @extend display-flex; */
+@extend display-flex;
 display-flex, .display-flex, .display-flex-center {
   display: flex;
   display: -webkit-flex; }
@@ -347,6 +347,10 @@ input[type=checkbox]:not(old):checked + label > span:before {
   position: relative;
   z-index: 2;
   color: #555; }
+
+  #logIn{
+    display: none;
+  }
 
 @media screen and (max-width: 768px) {
   .container {

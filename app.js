@@ -10,6 +10,7 @@ var bodyParser = require('body-parser')
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended:true}));
+app.use(session({secret:'225lokokl', resave: false, saveUninitialized:true}));
 
 app.use(express.static(__dirname + '/views'));
 
@@ -18,6 +19,6 @@ app.get('/', function(req,res){
 });
 
 app.use('/user', db);
-var serv= app.listen(process.env.PORT || 4001);
- console.log("Server started.");
+var serv= app.listen(process.env.PORT || 4008);
+ console.log("Server started. 4008");
 
