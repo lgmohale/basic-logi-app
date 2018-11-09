@@ -63,7 +63,7 @@ function userloggedIn(){
             var script = document.createElement('script');
             script.src = 'game/main/game.js';
             document.getElementsByTagName('head')[0].appendChild(script);
-            window.location = 'login.html'
+            window.location = 'index.html';
         }
         else{
             document.getElementById('logIn').style.display = 'block';

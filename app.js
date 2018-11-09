@@ -4,7 +4,6 @@ const bcrypt = require('bcrypt');
 const session = require('express-session');
 var flash = require('connect-flash');
 var serv = require('http').Server(app);
-var server;
 var db = require('./routes');
 var bodyParser = require('body-parser')
 
@@ -19,6 +18,6 @@ app.get('/', function(req,res){
 });
 
 app.use('/user', db);
-var serv= app.listen(process.env.PORT || 4008);
+serv = app.listen(process.env.PORT || 4008);
  console.log("Server started. 4008");
 
