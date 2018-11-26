@@ -9,6 +9,7 @@ var score = 0;
 var scoreText;
 var livesText;
 var gameoverText;
+var gamerestartText;
 // var gameOver;
 var levelStopped = false;
 class controls extends Phaser.Scene {
@@ -144,6 +145,7 @@ livesText.setText('LIVE: ' + lives);
     if(lives == 0){
         restartLevel();
         gameoverText.setText('GAME OVER!!!');
+        
     };
 };
 
@@ -166,15 +168,16 @@ function BulletsEnemyCollision(bullets, enemies){
     enemies.disableBody(true, true);
     bullets.disableBody(true, true);
     //
-    // if(score == 120){
-    //     Nextleve();
-    //     console.log('next level');
-    //     gameoverText.setText('WELL DONE!!!');
-    // };
+    if(score == 200){
+        Nextleve();
+        console.log('next level');
+        gameoverText.setText('WELL DONE!!! you hit 200 enemies');
+    };
     
 };
 
-// function Nextleve(){
-//     game.scene.pause('controls');
-//     game.scene.start('level2');
-// };
+function Nextleve(){
+    game.scene.pause('controls');
+    game.scene.start('level2');
+};
+

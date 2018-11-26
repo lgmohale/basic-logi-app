@@ -58,12 +58,11 @@ function userloggedIn(){
     fetch('http://localhost:4008/user/isUserLoggin')
     .then(res=> res.json())
     .then(res=>{
-        if(res.resp !== false){
+        if(res.resp == true){
             document.getElementById('logIn').style.display = 'none';
             var script = document.createElement('script');
-            script.src = 'game/main/game.js';
+            script.src = 'game/game.js';
             document.getElementsByTagName('head')[0].appendChild(script);
-            window.location = 'index.html';
         }
         else{
             document.getElementById('logIn').style.display = 'block';
